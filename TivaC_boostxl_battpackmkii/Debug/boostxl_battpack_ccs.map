@@ -1,0 +1,460 @@
+******************************************************************************
+                  TI ARM Linker PC v5.2.6                      
+******************************************************************************
+>> Linked Mon Aug 29 16:01:16 2016
+
+OUTPUT FILE NAME:   <TivaC_boostxl_battpackmkii.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00001dd1
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  00002996  000fd66a  R  X
+  SRAM                  20000000   00040000  00000af9  0003f507  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00002998   00002998    r-x
+  00000000    00000000    00000200   00000200    r-- .intvecs
+  00000200    00000200    0000238a   0000238a    r-x .text
+  0000258c    0000258c    00000374   00000374    r-- .const
+  00002900    00002900    00000098   00000098    r-- .cinit
+20000000    20000000    00000afc   00000000    rw-
+  20000000    20000000    00000661   00000000    rw- .bss
+  20000664    20000664    00000400   00000000    rw- .stack
+  20000a64    20000a64    00000098   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000200     
+                  00000000    00000200     startup_ccs.obj (.intvecs)
+
+.text      0    00000200    0000238a     
+                  00000200    00000268     boostxl_battpack.obj (.text:Cmd_status)
+                  00000468    00000214     pinout.obj (.text:PinoutSet)
+                  0000067c    000001fc     driverlib.lib : sysctl.obj (.text:SysCtlClockFreqSet)
+                  00000878    000001ea     uartstdio.obj (.text:UARTvprintf)
+                  00000a62    00000002     startup_ccs.obj (.text:FaultISR)
+                  00000a64    000001c8     boostxl_battpack.obj (.text:main)
+                  00000c2c    00000160     uartstdio.obj (.text:UARTStdioIntHandler)
+                  00000d8c    00000130     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00000ebc    0000010c     boostxl_battpack.obj (.text:Cmd_current)
+                  00000fc8    00000108     boostxl_battpack.obj (.text:Cmd_temp)
+                  000010d0    000000fc     boostxl_battpack.obj (.text:Cmd_volt)
+                  000011cc    000000f2     sensorlib.lib : i2cm_drv.obj (.text:I2CMIntHandler)
+                  000012be    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  000012c0    000000d4     boostxl_battpack.obj (.text:BQ27441G1AppI2CWait)
+                  00001394    000000b4     boostxl_battpack.obj (.text:CheckForUserCommands)
+                  00001448    000000b0     uartstdio.obj (.text:UARTStdioConfig)
+                  000014f8    000000a8     uartstdio.obj (.text:UARTwrite)
+                  000015a0    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  0000163c    00000098     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateIdle)
+                  000016d4    0000008c     bq27441g1.obj (.text:BQ27441G1Callback)
+                  00001760    0000008c     uartstdio.obj (.text:UARTPrimeTransmit)
+                  000017ec    00000084     sensorlib.lib : i2cm_drv.obj (.text:I2CMCommand)
+                  00001870    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  000018ea    00000002     startup_ccs.obj (.text:NmiSR)
+                  000018ec    0000006c     pinout.obj (.text:LEDWrite)
+                  00001958    0000006c     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.obj (.text)
+                  000019c4    0000006a                                   : copy_decompress_rle.obj (.text)
+                  00001a2e    00000002                                   : i_div0.obj (.text)
+                  00001a30    00000064     cmdline.obj (.text:CmdLineProcess)
+                  00001a94    00000064     driverlib.lib : interrupt.obj (.text:IntIsEnabled)
+                  00001af8    00000060     boostxl_battpack.obj (.text:Cmd_help)
+                  00001b58    00000060     driverlib.lib : interrupt.obj (.text:IntDisable)
+                  00001bb8    00000060                   : interrupt.obj (.text:IntEnable)
+                  00001c18    00000060     pinout.obj (.text:LEDRead)
+                  00001c78    0000005e     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateWritePause)
+                  00001cd6    00000002     --HOLE-- [fill = 0]
+                  00001cd8    00000054     bq27441g1.obj (.text:BQ27441G1DataRead)
+                  00001d2c    00000054     uartstdio.obj (.text:UARTgets)
+                  00001d80    00000050     boostxl_battpack.obj (.text:LEDBlinkIntHandler)
+                  00001dd0    00000050     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00001e20    0000004e     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateWriteFinal)
+                  00001e6e    00000002     --HOLE-- [fill = 0]
+                  00001e70    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00001ebc    00000048     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadNext)
+                  00001f04    00000048     driverlib.lib : i2c.obj (.text:I2CMasterInitExpClk)
+                  00001f4c    00000048                   : sysctl.obj (.text:_SysCtlFrequencyGet)
+                  00001f94    00000046     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateWriteNext)
+                  00001fda    00000044                   : i2cm_drv.obj (.text:I2CMStateCallback)
+                  0000201e    00000002     --HOLE-- [fill = 0]
+                  00002020    00000044     uartstdio.obj (.text:UARTPeek)
+                  00002064    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.text)
+                  000020a8    00000040                                   : u_divt2.obj (.text)
+                  000020e8    0000003e     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadFinal)
+                  00002126    0000003e                   : i2cm_drv.obj (.text:I2CMStateReadPause)
+                  00002164    0000003c     uartstdio.obj (.text:UARTFlushTx)
+                  000021a0    00000034     bq27441g1.obj (.text:BQ27441G1DataTemperatureInternalGetFloat)
+                  000021d4    00000034     sensorlib.lib : i2cm_drv.obj (.text:I2CMInit)
+                  00002208    0000002c     bq27441g1.obj (.text:BQ27441G1DataCapacityFullAvailableGetFloat)
+                  00002234    0000002c     bq27441g1.obj (.text:BQ27441G1DataCapacityRemainingGetFloat)
+                  00002260    0000002c     bq27441g1.obj (.text:BQ27441G1DataCurrentAverageGetFloat)
+                  0000228c    0000002c     bq27441g1.obj (.text:BQ27441G1DataCurrentStandbyGetFloat)
+                  000022b8    0000002c     bq27441g1.obj (.text:BQ27441G1DataVoltageBatteryGetFloat)
+                  000022e4    0000002c     uartstdio.obj (.text:UARTFlushRx)
+                  00002310    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  0000233a    0000002a     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadFirst)
+                  00002364    00000020     bq27441g1.obj (.text:BQ27441G1Init)
+                  00002384    00000020     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadOne)
+                  000023a4    0000001c     driverlib.lib : sysctl.obj (.text:_SysCtlMemTimingGet)
+                  000023c0    0000001a     uartstdio.obj (.text:UARTprintf)
+                  000023da    00000002     --HOLE-- [fill = 0]
+                  000023dc    00000018     boostxl_battpack.obj (.text:BQ27441G1AppCallback)
+                  000023f4    00000018     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadWait)
+                  0000240c    00000018     uartstdio.obj (.text:IsBufferFull)
+                  00002424    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  0000243c    00000018                                   : strcmp.obj (.text)
+                  00002454    00000014     uartstdio.obj (.text:UARTRxBytesAvail)
+                  00002468    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  0000247c    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeEthernetLED)
+                  0000248e    00000012                   : gpio.obj (.text:GPIOPinTypeI2CSCL)
+                  000024a0    00000012     uartstdio.obj (.text:GetBufferCount)
+                  000024b2    00000010     bq27441g1.obj (.text:BQ27441G1DataTemperatureInternalGetRaw)
+                  000024c2    0000000e     uartstdio.obj (.text:IsBufferEmpty)
+                  000024d0    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  000024de    0000000c     bq27441g1.obj (.text:BQ27441G1DataCapacityFullAvailableGetRaw)
+                  000024ea    0000000c     bq27441g1.obj (.text:BQ27441G1DataCapacityRemainingGetRaw)
+                  000024f6    0000000c     bq27441g1.obj (.text:BQ27441G1DataCurrentAverageGetRaw)
+                  00002502    0000000c     bq27441g1.obj (.text:BQ27441G1DataCurrentStandbyGetRaw)
+                  0000250e    0000000c     bq27441g1.obj (.text:BQ27441G1DataVoltageBatteryGetRaw)
+                  0000251a    00000002     --HOLE-- [fill = 0]
+                  0000251c    0000000c     boostxl_battpack.obj (.text:BQ27441G1I2CIntHandler)
+                  00002528    0000000c     driverlib.lib : interrupt.obj (.text:IntTrigger)
+                  00002534    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00002540    0000000a     driverlib.lib : i2c.obj (.text:I2CMasterEnable)
+                  0000254a    00000008                   : i2c.obj (.text:I2CMasterIntClear)
+                  00002552    00000008                   : i2c.obj (.text:I2CMasterIntEnableEx)
+                  0000255a    00000008                   : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  00002562    00000006                   : gpio.obj (.text:GPIOPinRead)
+                  00002568    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  0000256e    00000006     startup_ccs.obj (.text:ResetISR)
+                  00002574    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  0000257a    00000004     driverlib.lib : i2c.obj (.text:I2CMasterControl)
+                  0000257e    00000004                   : i2c.obj (.text:I2CMasterDataGet)
+                  00002582    00000004                   : i2c.obj (.text:I2CMasterDataPut)
+                  00002586    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
+
+.const     0    0000258c    00000374     
+                  0000258c    00000120     driverlib.lib : sysctl.obj (.const:g_pppui32XTALtoVCO)
+                  000026ac    00000102     boostxl_battpack.obj (.const:.string)
+                  000027ae    00000002     --HOLE-- [fill = 0]
+                  000027b0    00000070     driverlib.lib : interrupt.obj (.const)
+                  00002820    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  0000288c    00000030                   : sysctl.obj (.const:g_sXTALtoMEMTIM)
+                  000028bc    00000028     uartstdio.obj (.const)
+                  000028e4    00000012     uartstdio.obj (.const:.string)
+                  000028f6    00000002     --HOLE-- [fill = 0]
+                  000028f8    00000008     driverlib.lib : sysctl.obj (.const)
+
+.cinit     0    00002900    00000098     
+                  00002900    00000070     (.cinit..data.load) [load image, compression = rle]
+                  00002970    0000000c     (__TI_handler_table)
+                  0000297c    00000004     --HOLE-- [fill = 0]
+                  00002980    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00002988    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000000    00000661     UNINITIALIZED
+                  20000000    00000400     uartstdio.obj (.bss:g_pcUARTTxBuffer)
+                  20000400    00000124     boostxl_battpack.obj (.bss:g_sI2CInst)
+                  20000524    00000080     uartstdio.obj (.bss:g_pcUARTRxBuffer)
+                  200005a4    00000048     boostxl_battpack.obj (.bss:g_sBQ27441G1Inst)
+                  200005ec    00000040     boostxl_battpack.obj (.bss:g_cCmdBuf)
+                  2000062c    00000024     cmdline.obj (.bss:g_ppcArgv)
+                  20000650    00000004     (.common:g_ui32PortNum)
+                  20000654    00000004     (.common:g_ui32SysClock)
+                  20000658    00000004     (.common:g_vui8DataFlag)
+                  2000065c    00000004     (.common:g_vui8ErrorFlag)
+                  20000660    00000001     (.common:g_bDisableEcho)
+
+.TI.noinit 
+*          0    20000000    00000000     UNINITIALIZED
+
+.stack     0    20000664    00000400     UNINITIALIZED
+                  20000664    00000400     --HOLE--
+
+.data      0    20000a64    00000098     UNINITIALIZED
+                  20000a64    0000006c     boostxl_battpack.obj (.data:g_psCmdTable)
+                  20000ad0    00000015     uartstdio.obj (.data)
+                  20000ae5    00000003     --HOLE--
+                  20000ae8    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20000af0    00000008                                   : exit.obj (.data)
+                  20000af8    00000004                                   : stkdepth_vars.obj (.data)
+
+.TI.persistent 
+*          0    20000a64    00000000     UNINITIALIZED
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00002988 records: 2, size/record: 8, table size: 16
+	.data: load addr=00002900, load size=00000070 bytes, run addr=20000a64, run size=00000098 bytes, compression=rle
+	.bss: load addr=00002980, load size=00000008 bytes, run addr=20000000, run size=00000661 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00002970 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                      
+-------   ----                                      
+000023dd  BQ27441G1AppCallback                      
+000012c1  BQ27441G1AppI2CWait                       
+00002209  BQ27441G1DataCapacityFullAvailableGetFloat
+000024df  BQ27441G1DataCapacityFullAvailableGetRaw  
+00002235  BQ27441G1DataCapacityRemainingGetFloat    
+000024eb  BQ27441G1DataCapacityRemainingGetRaw      
+00002261  BQ27441G1DataCurrentAverageGetFloat       
+000024f7  BQ27441G1DataCurrentAverageGetRaw         
+0000228d  BQ27441G1DataCurrentStandbyGetFloat       
+00002503  BQ27441G1DataCurrentStandbyGetRaw         
+00001cd9  BQ27441G1DataRead                         
+000021a1  BQ27441G1DataTemperatureInternalGetFloat  
+000024b3  BQ27441G1DataTemperatureInternalGetRaw    
+000022b9  BQ27441G1DataVoltageBatteryGetFloat       
+0000250f  BQ27441G1DataVoltageBatteryGetRaw         
+0000251d  BQ27441G1I2CIntHandler                    
+00002365  BQ27441G1Init                             
+00002065  C$$EXIT                                   
+00001395  CheckForUserCommands                      
+00001a31  CmdLineProcess                            
+00000ebd  Cmd_current                               
+00001af9  Cmd_help                                  
+00000201  Cmd_status                                
+00000fc9  Cmd_temp                                  
+000010d1  Cmd_volt                                  
+00002311  GPIODirModeSet                            
+00000d8d  GPIOPadConfigSet                          
+00002563  GPIOPinRead                               
+0000247d  GPIOPinTypeEthernetLED                    
+0000248f  GPIOPinTypeI2CSCL                         
+00002569  GPIOPinWrite                              
+000017ed  I2CMCommand                               
+000021d5  I2CMInit                                  
+000011cd  I2CMIntHandler                            
+0000257b  I2CMasterControl                          
+0000257f  I2CMasterDataGet                          
+00002583  I2CMasterDataPut                          
+00002541  I2CMasterEnable                           
+00001f05  I2CMasterInitExpClk                       
+0000254b  I2CMasterIntClear                         
+00002553  I2CMasterIntEnableEx                      
+0000255b  I2CMasterSlaveAddrSet                     
+00001b59  IntDisable                                
+00001bb9  IntEnable                                 
+00001a95  IntIsEnabled                              
+00002529  IntTrigger                                
+00001d81  LEDBlinkIntHandler                        
+00001c19  LEDRead                                   
+000018ed  LEDWrite                                  
+00000469  PinoutSet                                 
+0000256f  ResetISR                                  
+UNDEFED   SHT$$INIT_ARRAY$$Base                     
+UNDEFED   SHT$$INIT_ARRAY$$Limit                    
+0000067d  SysCtlClockFreqSet                        
+000022e5  UARTFlushRx                               
+00002165  UARTFlushTx                               
+00002021  UARTPeek                                  
+00002455  UARTRxBytesAvail                          
+00001449  UARTStdioConfig                           
+00000c2d  UARTStdioIntHandler                       
+00001d2d  UARTgets                                  
+000023c1  UARTprintf                                
+00000879  UARTvprintf                               
+000014f9  UARTwrite                                 
+20000a64  __STACK_END                               
+00000400  __STACK_SIZE                              
+20000a64  __STACK_TOP                               
+00002988  __TI_CINIT_Base                           
+00002998  __TI_CINIT_Limit                          
+00002970  __TI_Handler_Table_Base                   
+0000297c  __TI_Handler_Table_Limit                  
+00001959  __TI_auto_init                            
+20000af0  __TI_cleanup_ptr                          
+000024d1  __TI_decompress_none                      
+00002575  __TI_decompress_rle24                     
+20000af4  __TI_dtors_ptr                            
+00000000  __TI_static_base__                        
+00002535  __TI_zero_init                            
+00001a2f  __aeabi_idiv0                             
+00001871  __aeabi_memclr                            
+00001871  __aeabi_memclr4                           
+00001871  __aeabi_memclr8                           
+000015a1  __aeabi_memcpy                            
+000015a1  __aeabi_memcpy4                           
+000015a1  __aeabi_memcpy8                           
+00001873  __aeabi_memset                            
+00001873  __aeabi_memset4                           
+00001873  __aeabi_memset8                           
+000020a9  __aeabi_uidiv                             
+000020a9  __aeabi_uidivmod                          
+ffffffff  __binit__                                 
+ffffffff  __c_args__                                
+20000664  __stack                                   
+00002425  _args_main                                
+00001dd1  _c_int00                                  
+20000ae8  _lock                                     
+00002477  _nop                                      
+0000246f  _register_lock                            
+00002469  _register_unlock                          
+00002587  _system_pre_init                          
+20000aec  _unlock                                   
+00002069  abort                                     
+ffffffff  binit                                     
+00001e71  copy_in                                   
+00002071  exit                                      
+00000000  g_pfnVectors                              
+20000a64  g_psCmdTable                              
+200005a4  g_sBQ27441G1Inst                          
+20000400  g_sI2CInst                                
+20000654  g_ui32SysClock                            
+20000658  g_vui8DataFlag                            
+2000065c  g_vui8ErrorFlag                           
+00000a65  main                                      
+20000af8  main_func_sp                              
+000015a1  memcpy                                    
+00001879  memset                                    
+0000243d  strcmp                                    
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                      
+-------   ----                                      
+00000000  __TI_static_base__                        
+00000000  g_pfnVectors                              
+00000201  Cmd_status                                
+00000400  __STACK_SIZE                              
+00000469  PinoutSet                                 
+0000067d  SysCtlClockFreqSet                        
+00000879  UARTvprintf                               
+00000a65  main                                      
+00000c2d  UARTStdioIntHandler                       
+00000d8d  GPIOPadConfigSet                          
+00000ebd  Cmd_current                               
+00000fc9  Cmd_temp                                  
+000010d1  Cmd_volt                                  
+000011cd  I2CMIntHandler                            
+000012c1  BQ27441G1AppI2CWait                       
+00001395  CheckForUserCommands                      
+00001449  UARTStdioConfig                           
+000014f9  UARTwrite                                 
+000015a1  __aeabi_memcpy                            
+000015a1  __aeabi_memcpy4                           
+000015a1  __aeabi_memcpy8                           
+000015a1  memcpy                                    
+000017ed  I2CMCommand                               
+00001871  __aeabi_memclr                            
+00001871  __aeabi_memclr4                           
+00001871  __aeabi_memclr8                           
+00001873  __aeabi_memset                            
+00001873  __aeabi_memset4                           
+00001873  __aeabi_memset8                           
+00001879  memset                                    
+000018ed  LEDWrite                                  
+00001959  __TI_auto_init                            
+00001a2f  __aeabi_idiv0                             
+00001a31  CmdLineProcess                            
+00001a95  IntIsEnabled                              
+00001af9  Cmd_help                                  
+00001b59  IntDisable                                
+00001bb9  IntEnable                                 
+00001c19  LEDRead                                   
+00001cd9  BQ27441G1DataRead                         
+00001d2d  UARTgets                                  
+00001d81  LEDBlinkIntHandler                        
+00001dd1  _c_int00                                  
+00001e71  copy_in                                   
+00001f05  I2CMasterInitExpClk                       
+00002021  UARTPeek                                  
+00002065  C$$EXIT                                   
+00002069  abort                                     
+00002071  exit                                      
+000020a9  __aeabi_uidiv                             
+000020a9  __aeabi_uidivmod                          
+00002165  UARTFlushTx                               
+000021a1  BQ27441G1DataTemperatureInternalGetFloat  
+000021d5  I2CMInit                                  
+00002209  BQ27441G1DataCapacityFullAvailableGetFloat
+00002235  BQ27441G1DataCapacityRemainingGetFloat    
+00002261  BQ27441G1DataCurrentAverageGetFloat       
+0000228d  BQ27441G1DataCurrentStandbyGetFloat       
+000022b9  BQ27441G1DataVoltageBatteryGetFloat       
+000022e5  UARTFlushRx                               
+00002311  GPIODirModeSet                            
+00002365  BQ27441G1Init                             
+000023c1  UARTprintf                                
+000023dd  BQ27441G1AppCallback                      
+00002425  _args_main                                
+0000243d  strcmp                                    
+00002455  UARTRxBytesAvail                          
+00002469  _register_unlock                          
+0000246f  _register_lock                            
+00002477  _nop                                      
+0000247d  GPIOPinTypeEthernetLED                    
+0000248f  GPIOPinTypeI2CSCL                         
+000024b3  BQ27441G1DataTemperatureInternalGetRaw    
+000024d1  __TI_decompress_none                      
+000024df  BQ27441G1DataCapacityFullAvailableGetRaw  
+000024eb  BQ27441G1DataCapacityRemainingGetRaw      
+000024f7  BQ27441G1DataCurrentAverageGetRaw         
+00002503  BQ27441G1DataCurrentStandbyGetRaw         
+0000250f  BQ27441G1DataVoltageBatteryGetRaw         
+0000251d  BQ27441G1I2CIntHandler                    
+00002529  IntTrigger                                
+00002535  __TI_zero_init                            
+00002541  I2CMasterEnable                           
+0000254b  I2CMasterIntClear                         
+00002553  I2CMasterIntEnableEx                      
+0000255b  I2CMasterSlaveAddrSet                     
+00002563  GPIOPinRead                               
+00002569  GPIOPinWrite                              
+0000256f  ResetISR                                  
+00002575  __TI_decompress_rle24                     
+0000257b  I2CMasterControl                          
+0000257f  I2CMasterDataGet                          
+00002583  I2CMasterDataPut                          
+00002587  _system_pre_init                          
+00002970  __TI_Handler_Table_Base                   
+0000297c  __TI_Handler_Table_Limit                  
+00002988  __TI_CINIT_Base                           
+00002998  __TI_CINIT_Limit                          
+20000400  g_sI2CInst                                
+200005a4  g_sBQ27441G1Inst                          
+20000654  g_ui32SysClock                            
+20000658  g_vui8DataFlag                            
+2000065c  g_vui8ErrorFlag                           
+20000664  __stack                                   
+20000a64  __STACK_END                               
+20000a64  __STACK_TOP                               
+20000a64  g_psCmdTable                              
+20000ae8  _lock                                     
+20000aec  _unlock                                   
+20000af0  __TI_cleanup_ptr                          
+20000af4  __TI_dtors_ptr                            
+20000af8  main_func_sp                              
+ffffffff  __binit__                                 
+ffffffff  __c_args__                                
+ffffffff  binit                                     
+UNDEFED   SHT$$INIT_ARRAY$$Base                     
+UNDEFED   SHT$$INIT_ARRAY$$Limit                    
+
+[117 symbols]

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<deviceVariant value="Cortex M.TM4C1294NCPDT"/>
+	<deviceFamily value="TMS470"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="5.0.4"/>
+	<isElfFormat value="true"/>
+	<rts value="libc.a"/>
+	<origin value="C:/EK-TM4C129/examples/boards/ek-tm4c1294xl-boostxl-battpack/boostxl_battpack/ccs"/>
+	<isTargetManual value="true"/>
+</projectOptions>

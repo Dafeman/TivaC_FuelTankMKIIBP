@@ -1,0 +1,1 @@
+"./boostxl_battpack.obj" "./startup_ccs.obj" "./drivers/buttons.obj" "./drivers/pinout.obj" "./sensorlib/bq27441g1.obj" "./utils/cmdline.obj" "./utils/uartstdio.obj" "./utils/ustdlib.obj" "../boostxl_battpack_ccs.cmd" -llibc.a -l"C:/EK-TM4C129/driverlib/ccs/Debug/driverlib.lib" -l"C:/EK-TM4C129/sensorlib/ccs/Debug/sensorlib.lib" 
