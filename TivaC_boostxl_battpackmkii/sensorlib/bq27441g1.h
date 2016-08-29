@@ -189,28 +189,6 @@ extern void BQ27441G1DataTemperatureInternalGetRaw(tBQ27441G1 *psInst,
 extern void BQ27441G1DataTemperatureInternalGetFloat(tBQ27441G1 *psInst,
                                                      float *pfData);
 
-/* API for BQ27510G3 Fuel Gauge.
-extern void BQ27441G1DataAtRateTimeToEmptyGetRaw(tBQ27441G1 *psInst,
-                                                 int16_t *pui16Data);
-extern void BQ27441G1DataAtRateTimeToEmptyGetFloat(tBQ27441G1 *psInst,
-                                                   float *pfData);
-extern void BQ27441G1DataTimeToEmptyGetRaw(tBQ27441G1 *psInst,
-                                           int16_t *pui16Data);
-extern void BQ27441G1DataTimeToEmptyGetFloat(tBQ27441G1 *psInst,
-                                             float *pfData);
-extern void BQ27441G1DataTimeToEmptyStandbyGetRaw(tBQ27441G1 *psInst,
-                                                  int16_t *pui16Data);
-extern void BQ27441G1DataTimeToEmptyStandbyGetFloat(tBQ27441G1 *psInst,
-                                                    float *pfData);
-extern void BQ27441G1DataCycleCountGetRaw(tBQ27441G1 *psInst,
-                                          int16_t *pui16Data);
-extern void BQ27441G1DataCycleCountGetFloat(tBQ27441G1 *psInst, float *pfData);
-extern void BQ27441G1DataCurrentInstantaneousGetRaw(tBQ27441G1 *psInst,
-                                                    int16_t *pui16Data);
-extern void BQ27441G1DataCurrentInstantaneousGetFloat(tBQ27441G1 *psInst,
-                                                      float *pfData);
-*/
-
 //*****************************************************************************
 //
 // Mark the end of the C bindings section for C++ compilers.

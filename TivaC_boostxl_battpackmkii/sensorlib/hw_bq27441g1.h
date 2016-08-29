@@ -39,14 +39,6 @@
 //*****************************************************************************
 #define BQ27441G1_O_CNTL_LSB    0x00        // System Control Register LSB
 #define BQ27441G1_O_CNTL_MSB    0x01        // System Control Register MSB
-//#define BQ27441G1_O_AT_RATE_LSB 0x02        // Discharge current value LSB
-//#define BQ27441G1_O_AT_RATE_MSB 0x03        // Discharge current value MSB
-//#define BQ27441G1_O_AT_RATE_TTE_LSB                                           \
-                                0x04        // Remaining operating time of
-                                            // battery with current AT_RATE LSB
-//#define BQ27441G1_O_AT_RATE_TTE_MSB                                           \
-                                0x05        // Remaining operating time of
-                                            // battery with current AT_RATE MSB
 #define BQ27441G1_O_TEMP_LSB    0x02        // Battery temperature LSB
 #define BQ27441G1_O_TEMP_MSB    0x03        // Battery temperature MSB
 #define BQ27441G1_O_VOLT_LSB    0x04        // Battery cell-pack voltage LSB
@@ -81,48 +73,18 @@
                                             // sense resistor LSB
 #define BQ27441G1_O_AVG_I_MSB   0x11        // Average current flow through
                                             // sense resistor MSB
-//#define BQ27441G1_O_TTE_LSB     0x16        // Predicted remaining battery life
-                                            // (minutes) LSB
-//#define BQ27441G1_O_TTE_MSB     0x17        // Predicted remaining battery life
-                                            // (minutes) MSB
-//#define BQ27441G1_O_STBY_I_LSB  0x18        // Standbye current through sense
-                                            // resistor LSB
-//#define BQ27441G1_O_STBY_I_MSB  0x19        // Standbye current through sense
-                                            // resistor MSB
-//#define BQ27441G1_O_STBY_TTE_LSB                                              \
-                                0x1A        // Predicted remaining standby
-                                            // battery life LSB
-//#define BQ27441G1_O_STBY_TTE_MSB                                              \
-                                0x1B        // Predicted remaining standby
-                                            // battery life MSB
 #define BQ27441G1_O_STATE_OF_HEALTH_LSB                                       \
                                 0x1C        // State of health (percent) LSB
 #define BQ27441G1_O_STATE_OF_HEALTH_MSB                                       \
                                 0x1D        // State of health (percent) MSB
-//#define BQ27441G1_O_CYC_COUNT_LSB                                             \
-                                0x1E        // Number of battery cycles
-                                            // experienced LSB
-//#define BQ27441G1_O_CYC_COUNT_MSB                                             \
-                                0x1F        // Number of battery cycles
-                                            // experienced MSB
 #define BQ27441G1_O_STATE_OF_CHRG_LSB                                         \
                                 0x1C        // State of charge (percent) LSB
 #define BQ27441G1_O_STATE_OF_CHRG_MSB                                         \
                                 0x1D        // State of charge (percent) MSB
-//#define BQ27441G1_O_INST_I_LSB  0x22        // Instananeous current flow
-                                            // through sense resistor LSB
-//#define BQ27441G1_O_INST_I_MSB  0x23        // Instananeous current flow
-                                            // through sense resistor MSB
 #define BQ27441G1_O_INT_TEMP_LSB                                              \
                                 0x1E        // Internal tmeperature LSB
 #define BQ27441G1_O_INT_TEMP_MSB                                              \
                                 0x1F        // Internal tmeperature MSB
-//#define BQ27441G1_O_RES_SCALE_LSB                                             \
-                                0x2A        // Resistance Scale LSB
-//#define BQ27441G1_O_RES_SCALE_MSB                                             \
-                                0x2B        // Resistance Scale MSB
-//#define BQ27441G1_O_OP_CFG_LSB  0x2C        // Operating Configuration LSB
-//#define BQ27441G1_O_OP_CFG_MSB  0x2D        // Operating Configuration MSB
 #define BQ27441G1_O_DCAP_LSB    0x3C        // Designed capacity of battery LSB
 #define BQ27441G1_O_DCAP_MSB    0x3D        // Designed capacity of battery MSB
 
@@ -138,9 +100,6 @@
 #define BQ27441G1_CNTL_LSB_FUNC_STATUS                                        \
                                 0x00        // reports DF checksum, hibernate,
                                             // IT, etc
-//#define BQ27441G1_CNTL_LSB_FUNC_DEVTYPE                                       \
-                                0x01        // reports device type (for
-                                            // example: 0x0520)
 #define BQ27441G1_CNTL_LSB_FUNC_FWVER                                         \
                                 0x02        // reports firmware version on the
                                             // device type
