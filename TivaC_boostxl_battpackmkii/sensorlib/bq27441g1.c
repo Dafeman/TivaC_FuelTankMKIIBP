@@ -452,8 +452,7 @@ BQ27441G1ReadModifyWrite(tBQ27441G1 *psInst, uint_fast8_t ui8Reg,
 //! read has completed (as indicated by calling the callback function), the new
 //! readings can be obtained via functions like:
 //!
-//! - BQ27441G1DataTCurrentInstantaneousGetRaw()
-//! - BQ27441G1DataTCurrentInstantaneousGetFloat()
+//! - BQ27441G1DataTemperatureBatteryGetRaw()
 //!
 //! \return Returns 1 if the read was successfully started and 0 if it was not.
 //
